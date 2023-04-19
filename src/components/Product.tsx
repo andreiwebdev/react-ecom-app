@@ -13,11 +13,14 @@ const Product = ({ id, title, price, image, cat }: ProductProps) => {
   const smallerTitle = title.split(" ").slice(0, 4).join(" ");
 
   return (
-    <ProductContainer className="mb-3" sm={6} md={4} xl={3}>
+    <ProductContainer className="mb-4" sm={6} md={4} xl={3}>
       <ProductImage className="mb-3" src={image} alt={title} />
       <div>
         <ProductTitle>{smallerTitle}</ProductTitle>
         <ProductPrice>${price}</ProductPrice>
+        <button className="w-100 p-2 mt-auto border-0 bg-dark text-white fw-bold">
+          ADD TO CART
+        </button>
       </div>
     </ProductContainer>
   );
@@ -25,7 +28,11 @@ const Product = ({ id, title, price, image, cat }: ProductProps) => {
 
 export default Product;
 
-const ProductContainer = styled(Col)``;
+const ProductContainer = styled(Col)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 
 const ProductImage = styled.img`
   margin: 0 auto;

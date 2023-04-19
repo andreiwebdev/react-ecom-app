@@ -4,11 +4,13 @@ import "./App.css";
 import ProductsList from "./components/ProductsList";
 import Filters from "./components/Filters";
 import { Provider } from "./store/context";
+import Cart from "./components/Cart";
 
 const App = () => {
   return (
     <Provider>
       <Container className="mt-5">
+        <Cart />
         <Row>
           <Col lg={3}>
             <Filters />
